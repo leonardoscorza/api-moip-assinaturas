@@ -6,7 +6,7 @@ class Moip::Subscription < Moip::Model
 	attr_accessor :code, :amount, :plan, :customer, 
                 :next_invoice_date, :status, :message, 
                 :invoice, :creation_date, 
-                :expiration_date, :subscriptions
+                :expiration_date, :subscriptions, :payment_method
 
 	validates :code, :amount, :plan, :customer, :presence => true
 
@@ -15,7 +15,8 @@ class Moip::Subscription < Moip::Model
 	    "code" => code,
 	    "amount" => amount,
 	    "plan" => plan,
-	    "customer" => customer
+	    "customer" => customer,
+	    "payment_method" => payment_method
 		}
 	end
 
